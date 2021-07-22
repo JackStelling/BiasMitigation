@@ -2,3 +2,7 @@
 *.png/
 *.png
 *.pth
+/Datasets/Cityscapes
+/Datasets/SYNTHIA
+/Datasets/SYNTHIA/
+/Datasets/Cityscapes/
