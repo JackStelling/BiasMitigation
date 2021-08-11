@@ -1,0 +1,4 @@
+[Exp7_Stage2] INFO: [TRAIN] cls loss : 3.066343, rgb : 1.930984, MI : -1.104464  (epoch 0.00)
+[Exp7_Stage2] INFO: [TRAIN] cls loss : nan, rgb : nan, MI : nan  (epoch 0.13)
+[Exp7_Stage2] INFO: [TRAIN] cls loss : nan, rgb : nan, MI : nan  (epoch 0.26)
+[Exp7_Stage2] INFO: [TRAIN] cls loss : 3.010073, rgb : 1.922630, MI : -1.070546  (epoch 0.00)

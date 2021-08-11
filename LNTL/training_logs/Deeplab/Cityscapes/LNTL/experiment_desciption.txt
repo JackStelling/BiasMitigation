@@ -1,0 +1,23 @@
+Descriptions of experiments in LNTL
+
+Exp1_Stage1 : First run of learning not to learn, using cityscapes and deeplab, we could use a pretrained checkpoint to load weigths in in future
+
+Exp2_Stage1 : Forcing the val dataloader to use greyscale images to check evaluation results, otherwise the same setup as Exp1_Stage1
+
+Exp3_Stage1 : Forcing the val dataloader to use colour jitter images to check evaluation results, otherwise the same setup as Exp1_Stage1 and Exp2_Stage1
+
+Exp4_Stage1 : Changing the value of lambda in the LNTL scheme. Here we change lambda in trainer script from 0.01 to 0.1 and everything else is the same
+Exp4_Stage2 : Changing the value of lambda in the LNTL scheme. Here we change lambda in trainer script from 0.1 to 1 and everything else is the same
+
+Exp5_Stage1 : Training the bias head only to perform better with the hope to load those weights into the wider model
+
+Exp6_Stage1 : Loading the bias network with pretrained converged weights - this was actually an error and just a rerun of the LNTL scheme!
+
+Exp7_Stage1 : Loading the bias network with pretrained converged weights added the flag, load_bias_head_only
+Exp7_Stage2 : Attempting loading pretrained bias head after 100 epochs with reduced learning rate to 0.00001 with ADAM 
+Exp7_Stage3 : Attempting loading pretrained bias head after 1 epoch to find the root of the NaN problem
+Exp7_Stage4 : Attempting loading pretrained bias head after 39 epochs to find the root of the NaN problem
+Exp7_Stage5 : Attempting loading pretrained bias head after 41 epochs to find the root of the NaN problem might have something to do with the optimiser state using weight decay, epoch 39 worked fine?
+Exp7_Stage6 : Running checkpoint 39 from bias head training - realised that the methodology is flawed so results will most likely be the same as a standard LNTL scheme 
+
+Exp8_Stage1 : Loading the bias network with pretrained converged weights added the flag, load_bias_head_only at checkpoint 50

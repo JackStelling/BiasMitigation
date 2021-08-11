@@ -1,0 +1,6 @@
+[Exp7_Stage3] INFO: [TRAIN] cls loss : 3.168172, rgb : 2.088337, MI : -1.232823  (epoch 0.00)
+[Exp7_Stage3] INFO: [TRAIN] cls loss : 2.120368, rgb : 1.569591, MI : -1.349828  (epoch 0.13)
+[Exp7_Stage3] INFO: [TRAIN] cls loss : 2.203379, rgb : 1.522660, MI : -1.452297  (epoch 0.26)
+[Exp7_Stage3] INFO: [TRAIN] cls loss : 1.854758, rgb : 1.441967, MI : -1.439508  (epoch 0.40)
+[Exp7_Stage3] INFO: [TRAIN] cls loss : 1.456571, rgb : 1.289126, MI : -1.329931  (epoch 0.53)
+[Exp7_Stage3] INFO: [TRAIN] cls loss : 2.273536, rgb : 1.680270, MI : -1.384064  (epoch 0.67)
