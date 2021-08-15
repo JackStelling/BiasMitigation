@@ -21,3 +21,5 @@ Exp7_Stage5 : Attempting loading pretrained bias head after 41 epochs to find th
 Exp7_Stage6 : Running checkpoint 39 from bias head training - realised that the methodology is flawed so results will most likely be the same as a standard LNTL scheme 
 
 Exp8_Stage1 : Loading the bias network with pretrained converged weights added the flag, load_bias_head_only at checkpoint 50
+
+Exp9_Stage1 : Deeplab with colour jitter val using the LNTL scheme. Dataloaders will output test images to the same folder this option file are located. We expect jittered val images and normal training images
