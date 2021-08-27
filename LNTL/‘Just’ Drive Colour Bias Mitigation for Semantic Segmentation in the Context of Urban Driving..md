@@ -1,17 +1,17 @@
 # **'Just' Drive** : Colour Bias Mitigation for Semantic Segmentation in the Context of Urban Driving.
 
 ## *Contents:*
-**1.** &nbsp; &nbsp; Introduction
-**2.** &nbsp; &nbsp; Requirements and environment
-**3.** &nbsp; &nbsp; Datasets and downloads
-**4.** &nbsp; &nbsp; Cited Repositories
-**5.** &nbsp; &nbsp; How to run this Repository
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -- *Setting up the file structure*
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -- *Preprocessing Data*
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -- *Training*
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -- *Evaluation*
-**6.** &nbsp; &nbsp; Licensing
-**7.** &nbsp; &nbsp; Summary 
+1. Introduction
+2.  Requirements and environment
+3.  Datasets and downloads
+4.  Cited Repositories
+5.  How to run this Repository
+-- *Setting up the file structure*
+-- *Preprocessing Data*
+-- *Training*
+-- *Evaluation*
+6. Licensing
+7. Summary 
 
 </br>
 
