@@ -23,8 +23,7 @@ Hello and welcome to 'Just'Drive; a project pushing towards bias mitigation and 
 
 In this project we attempt to remove colour bias from urban driving scenes used to train autonomous vehicle segmentation systems. Although this was the context the project focussed on the core principle should be applicable to any computer vision domain wishing to remove colour bias. 
 
-![Network_Diagram]()
-
+![Network_Diagram](Figures/network.png)
 
 The project attenps to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wise semantic segmentation task. We use an auxiliary bias detection head slotted into a seminal semantic segmentation network to bin the colours into one of 8 classes. This colour information is then extracted out of the main semantic segmentation network via adversarial learning. So we let the networks play a minimax game until the bias head diverges – not due to poor performance but because the feature extraction network has unlearned the colour information making the bias detector struggle to perform its classification task. So we essentially penalise the feature extractor for encoding too much colour information. 
 
