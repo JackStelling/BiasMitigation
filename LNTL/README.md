@@ -32,10 +32,10 @@ The project builds on top of other work in the field which have shown that biase
 The aim of this paper is to mitigate colour bias from semantic segmentation models trained on urban driving scenes.
 The objectives of this project are twofold:
  
-[x]  Firstly, to gain empirical evidence that seminal semantic segmentation architectures do overfit to the colour
+- [x]  Firstly, to gain empirical evidence that seminal semantic segmentation architectures do overfit to the colour
 information in highly variable urban scenes, and, where possible attempt to quantify this. 
 
-[x]  Secondly, to determine whether using a multi-headed network architecture, to adversarially remove a known
+- [x]  Secondly, to determine whether using a multi-headed network architecture, to adversarially remove a known
 bias at train-time in a pixel-wise semantic segmentation model is effective. 
 
 
