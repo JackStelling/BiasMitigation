@@ -6,10 +6,10 @@
 3.  Datasets and Downloads
 4.  Cited Repositories
 5.  How to run this Repository
-  5.1 *Setting up the file structure*
-  5.2 *Preprocessing Data*
-  5.3 *Training*
-  5.4 *Evaluation*
+  - 5.1 *Setting up the file structure*
+  - 5.2 *Preprocessing Data*
+  - 5.3 *Training*
+  - 5.4 *Evaluation*
 6. Licensing
 7. Summary 
 
@@ -17,7 +17,7 @@
 
 ## 1. Introduction:
 
-Hello and welcome to 'Just'Drive; a project pushing towards bias mitigation and fairness in AI. This repository is the PyTorch implementation of the project found here:
+Hello and welcome to **'Just'Drive**; a project pushing towards bias mitigation and fairness in AI. This repository is the PyTorch implementation of the project found here:
 
 ![Report](Documents/JustDrive_Report.pdf)
 
@@ -32,10 +32,10 @@ The project builds on top of other work in the field which have shown that biase
 The aim of this paper is to mitigate colour bias from semantic segmentation models trained on urban driving scenes.
 The objectives of this project are twofold:
 
-• Firstly, to gain empirical evidence that seminal semantic segmentation architectures do overfit to the colour
+ - Firstly, to gain empirical evidence that seminal semantic segmentation architectures do overfit to the colour
 information in highly variable urban scenes, and, where possible attempt to quantify this.
 
-• Secondly, to determine whether using a multi-headed network architecture, to adversarially remove a known
+ - Secondly, to determine whether using a multi-headed network architecture, to adversarially remove a known
 bias at train-time in a pixel-wise semantic segmentation model is effective.
 
 
