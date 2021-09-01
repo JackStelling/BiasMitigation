@@ -6,8 +6,10 @@ When a model is ran these directories are automatically created saving experimen
 
 ### Baseline models
 
-![] Add file structure images for baseline and LNTL here
+![base_files](Figures/base_files) 
 
 
 ### LNTL Scheme
 
+
+![LNTL_files](Figures/LNTL_files) 
