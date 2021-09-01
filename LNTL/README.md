@@ -5,11 +5,11 @@
 2.  Requirements and Environment
 3.  Datasets and Downloads
 4.  Cited Repositories
-5.  How to run this Repository
-  - 5.1 *Setting up the file structure*
-  - 5.2 *Preprocessing Data*
-  - 5.3 *Training*
-  - 5.4 *Evaluation*
+5.  How to run this Repository  
+  5.1 *Setting up the file structure*
+  5.2 *Preprocessing Data*
+  5.3 *Training*
+  5.4 *Evaluation*
 6. Licensing
 7. Summary 
 
