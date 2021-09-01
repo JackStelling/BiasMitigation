@@ -6,10 +6,10 @@
 3.  Datasets and Downloads
 4.  Cited Repositories
 5.  How to run this Repository
-. . *Setting up the file structure*
-. . *Preprocessing Data*
-. . *Training*
-. . *Evaluation*
+  5.1 *Setting up the file structure*
+  5.2 *Preprocessing Data*
+  5.3 *Training*
+  5.4 *Evaluation*
 6. Licensing
 7. Summary 
 
@@ -19,17 +19,24 @@
 
 Hello and welcome to 'Just'Drive; a project pushing towards bias mitigation and fairness in AI. This repository is the PyTorch implementation of the project found here:
 
-[link to pdf]
+![Report](Documents/JustDrive_Report.pdf)
 
 In this project we attempt to remove colour bias from urban driving scenes used to train autonomous vehicle segmentation systems. Although this was the context the project focussed on the core principle should be applicable to any computer vision domain wishing to remove colour bias. 
 
 ![Network_Diagram](Figures/network.png)
 
-The project attenps to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wise semantic segmentation task. We use an auxiliary bias detection head slotted into a seminal semantic segmentation network to bin the colours into one of 8 classes. This colour information is then extracted out of the main semantic segmentation network via adversarial learning. So we let the networks play a minimax game until the bias head diverges – not due to poor performance but because the feature extraction network has unlearned the colour information making the bias detector struggle to perform its classification task. So we essentially penalise the feature extractor for encoding too much colour information. 
+The project attempts to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wise semantic segmentation task. We use an auxiliary bias detection head slotted into a seminal semantic segmentation network to bin the colours into one of 8 classes. This colour information is then extracted out of the main semantic segmentation network via adversarial learning. So we let the networks play a minimax game until the bias head diverges – not due to poor performance but because the feature extraction network has unlearned the colour information making the bias detector struggle to perform its classification task. So we essentially penalise the feature extractor for encoding too much colour information. 
 
 The project builds on top of other work in the field which have shown that biases do exist within the CNNs; Often showing that models select the simplest cue for decision making. If colour information is available the model will surely use it as a cue for making decisions - even if it is not the correct cue to use. For example in the case of road driving scenes: Is a tree still classified as a tree even if it doesn't have its summer crown of leaves? Or is a road still classified as such even though a winter's snow has left a white blanket over the city? If we are to depend on AV technology as the transportation method of the future, we must strive for a generalisable and equitable system. 
 
-The aim of the project was to remove these biases which 
+The aim of this paper is to mitigate colour bias from semantic segmentation models trained on urban driving scenes.
+The objectives of this project are twofold:
+
+• Firstly, to gain empirical evidence that seminal semantic segmentation architectures do overfit to the colour
+information in highly variable urban scenes, and, where possible attempt to quantify this.
+
+• Secondly, to determine whether using a multi-headed network architecture, to adversarially remove a known
+bias at train-time in a pixel-wise semantic segmentation model is effective.
 
 
 </br>
@@ -133,7 +140,7 @@ Enter the space you wish to clone this *Git* repository to, I highly recommend t
 Hereafter the steps needed to run in Colab are discussed. Each directory also has its own README which dicusses exactly what the code within aims to do. 
 
 
-### Setting up file structure
+### 5.1 Setting up file structure
 
 - From a terminal navigate to the repository destination and enter:
 ```console
@@ -156,7 +163,7 @@ user: $ git clone https://github.com/mcordts/cityscapesScripts
 ```
  - Enter the cloned cityscapesScripts repository and delete their .git log if you wish to track the BiasMitigation using Git. 
 
-### Preprocessing Data
+### 5.2 Preprocessing Data
 
 - Navigate to 
 ```console
@@ -168,7 +175,7 @@ user: $ /content/drive/MyDrive/BiasMitigation/LNTL/utils
     
     these files **ONLY NEED TO BE RAN ONCE** they add all preprocessing neccessary for both cityscapes and SYNTHIA more information can be found in the 'utils' folder README. These scripts take approx 6hours heach to run on the environemnt specified above. 
 
-### Training
+### 5.3 Training
 
 - Open *main.ipynb* the file contains many flags to set up the different experiments mentioned in the main project report. Examples: 
     - To train a baseline Deeplab model without the Learning Not To Learn Scheme with Cityscapes colour training images use the following options whilst keeping all other at default:
@@ -208,7 +215,7 @@ user: $ /content/drive/MyDrive/BiasMitigation/LNTL/utils
 - Test images are drawn from the train and validation dataloaders and saved to disk in the '~root/training_logs/{model selection options}/test_input_images' to ensure that the correct training data is being loaded into the model. 
 
 
-### Evaluation
+### 5.4 Evaluation
 
 Loss curves can be inspected during model training. For a more granular analysis a few techniques used:
 
@@ -265,7 +272,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## 7. Summary 
 
-Give a brief project conclusion and some areas of future work. 
+Our contribution empirically shows that semantic segmentation architectures do overfit to the colour within training data, and they struggle to generalise to unseen test data –even from a very similar input distribution, as seen in raw ! weather manipulation experiments. In the worst case; when validating on a set with a colour invert transformation, reductions of 85.50% were observed. We demonstrate that the unlearning technique itself is viable, showing a qualitative improvement to both stuff and things classes in pixel-wise semantic segmentation, from a benchmark seminal architecture - mIoU metrics confirmed this improvement. We observed a 62% increase in mIoU score for colour invert; when neglecting the result for colour invert, we still observe an average increase of 1.5% over all validation set manipulations tested. Furthermore, an average increase of 14.5% was observed for the “human” class, enhancing pragmatic performance in a safety-critical application such as autonomous driving. 
 
 ### Contact Information
 
