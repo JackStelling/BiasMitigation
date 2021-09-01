@@ -6,10 +6,11 @@ When a model is ran these directories are automatically created saving experimen
 
 ### Baseline models
 
-![base_files](Figures/base_files) 
+![base_files](Figures/filetree_exp_baseline) 
 
 
 ### LNTL Scheme
 
+![LNTL_files](Figures/filetree_exp_LNTL) 
 
-![LNTL_files](Figures/LNTL_files) 
+
