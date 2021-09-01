@@ -6,11 +6,11 @@ When a model is ran these directories are automatically created saving experimen
 
 ### Baseline models
 
-![base_files](https://github.com/JackStelling/BiasMitigation/edit/master/LNTL/Figures/filetree_exp_baseline) 
+![base_files](https://github.com/JackStelling/BiasMitigation/LNTL/Figures/filetree_exp_baseline.png) 
 
 
 ### LNTL Scheme
 
-![LNTL_files](https://github.com/JackStelling/BiasMitigation/edit/master/LNTL/Figures/filetree_exp_LNTL) 
+![LNTL_files](https://github.com/JackStelling/BiasMitigation/LNTL/Figures/filetree_exp_LNTL.png) 
 
 
