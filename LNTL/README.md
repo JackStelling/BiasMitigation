@@ -25,9 +25,9 @@ In this project we attempt to remove colour bias from urban driving scenes used 
 
 ![Network_Diagram](Figures/network.png)
 
-The project attempts to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wise semantic segmentation task. We use an auxiliary bias detection head slotted into a seminal semantic segmentation network to bin the colours into one of 8 classes. This colour information is then extracted out of the main semantic segmentation network via adversarial learning. So we let the networks play a minimax game until the bias head diverges – not due to poor performance but because the feature extraction network has unlearned the colour information making the bias detector struggle to perform its classification task. So we essentially penalise the feature extractor for encoding too much colour information. 
+The project attempts to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wise semantic segmentation task. We use an auxiliary bias detection head slotted into a seminal semantic segmentation network to bin the colours into one of 8 classes. This colour information is then extracted out of the main semantic segmentation network via adversarial learning. We let the networks play this minimax game until the bias head diverges – not due to poor performance but because the feature extraction network has unlearned the colour information making the bias detector struggle to perform its classification task. We essentially penalise the feature extractor for encoding too much colour information. 
 
-The project builds on top of other work in the field which have shown that biases do exist within the CNNs; Often showing that models select the simplest cue for decision making. If colour information is available the model will surely use it as a cue for making decisions - even if it is not the correct cue to use. For example in the case of road driving scenes: Is a tree still classified as a tree even if it doesn't have its summer crown of leaves? Or is a road still classified as such even though a winter's snow has left a white blanket over the city? If we are to depend on AV technology as the transportation method of the future, we must strive for a generalisable and equitable system. 
+The project builds on top of other work in the field which have shown that biases do exist within the CNNs; Often showing that models select the simplest cue for decision making. If colour information is available, the model will surely use it as a cue for making decisions - even if it is not the correct cue to use. For example, in the case of road driving scenes: Is a tree still classified as a tree even if it doesn't have its summer crown of leaves? Or is a road still classified as such even though a winter's snow has left a white blanket over the city? If we are to depend on AV technology as the transportation method of the future, we must strive for a generalisable and equitable system. 
 
 The aim of this paper is to mitigate colour bias from semantic segmentation models trained on urban driving scenes.
 The objectives of this project are twofold:
@@ -43,7 +43,7 @@ bias at train-time in a pixel-wise semantic segmentation model is effective.
 
 ## 2. Requirements and Environment
 
-The project was completed using Google Colab with ...specs
+The project was completed using Google Colab with the following:
 
 **Package Versions**
 - Python : **3.7.1**
@@ -88,9 +88,9 @@ user: $ nvidia-smi
 
 Features of Colab you may need to edit if you want to run locally or elsewhere:
 - Most scripts start with a mount drive command to access files on Google Drive. 
-- File paths will need to be ammended depending on where you run the script. 
+- File paths will need to be amended depending on where you run the script. 
 - File imports using *.ipynb* require slightly different syntax so most import statements have the module *import_ipynb* to handle this standard *.py* scripts don't require this.
-- The command 'cv2.imshow' from Pythons computer visions package doesnt work in Colab so we run a patch allowing 'cv2_imshow' instead - outside of Colab this will need to be ammended.
+- The command 'cv2.imshow' from Pythons computer vision package doesnt work in Colab so we run a patch allowing 'cv2_imshow' instead - outside of Colab this will need to be amended.
 - A useful command line tool to convert the scripts from *.ipynb* -----> *.py*  can be found here: https://nbconvert.readthedocs.io/en/latest/ 
 
 </br>
@@ -100,20 +100,20 @@ Features of Colab you may need to edit if you want to run locally or elsewhere:
 This project uses two main datasets: **Cityscapes** and **SYNTHIA**. 
 
 #### **Cityscapes** 
-The Cityscapes dataset is a widely used semantic segmentation benchmark. Cityscapes contains data from 50 cities in Europe. The datset contains over 5000 fine annoted images at a resolution of 2048 x 1024 providing pixel-level, instance-level and panoptic semantic ground truth labels. 
+The Cityscapes dataset is a widely used semantic segmentation benchmark. Cityscapes contains data from 50 cities in Europe. The dataset contains over 5000 fine annotated images at a resolution of 2048 x 1024 providing pixel-level, instance-level and panoptic semantic ground truth labels. 
 
-- Visit the official cityscape website at: https://www.cityscapes-dataset.com/ for an in depth description of the dataset.
+- Visit the official cityscape website at: https://www.cityscapes-dataset.com/ for an in-depth description of the dataset.
 - Provide your email address and some contact information to gain access to the dataset downloads portal.
-- Once access is granted download the *gt-fine-trainvaltest.zip*  as shown below:
+- Once access is granted download the *gt-fine-trainvaltest.zip*. 
+- To run the weather corruption experiments you must also download the fog and rain datasets at the bottom of the portal.  
 
-[]insert cityscapes download image here.(might be overkill)
 
 #### SYNTHIA
 The Synthia dataset is comprised of photo-realistic images rendered from a virtual city. The dataset used in this paper is the *synthia-rand-cityscapes* subset containing 9400 images at a resolution of 1280 x 760; which contain labels compatible with Cityscapes, allowing for fairer cross examination of results.
 
 - Visit the official Synthia website at http://synthia-dataset.net/
 - Navigate to the downloads tab and download the *synthia-rand-cityscapes* subset for analysis. 
-- An extra validation set is used in the project using a winter 
+
 
 
 </br>
@@ -137,7 +137,7 @@ This project builds on top of some other *Git* repositories, I thank the authors
 
 Enter the space you wish to clone this *Git* repository to, I highly recommend this to be Google Colab. 
 
-Hereafter the steps needed to run in Colab are discussed. Each directory also has its own README which dicusses exactly what the code within aims to do. 
+Hereafter the steps needed to run in Colab are discussed. Each directory also has its own README which dicusses the purpose of each script. 
 
 
 ### 5.1 Setting up file structure
@@ -173,12 +173,12 @@ user: $ /content/drive/MyDrive/BiasMitigation/LNTL/utils
     - *preprocess_cityscapes.ipynb*
     - *preprocess_SYNTHIA.ipynb*
     
-    these files **ONLY NEED TO BE RAN ONCE** they add all preprocessing neccessary for both cityscapes and SYNTHIA more information can be found in the 'utils' folder README. These scripts take approx 6hours heach to run on the environemnt specified above. 
+    these files **ONLY NEED TO BE RAN ONCE** they add all preprocessing necessary for both cityscapes and SYNTHIA more information can be found in the 'utils' folder README. These scripts take approx. 6 hours each to run on the environment specified above. 
 
 ### 5.3 Training
 
 - Open *main.ipynb* the file contains many flags to set up the different experiments mentioned in the main project report. Examples: 
-    - To train a baseline Deeplab model without the Learning Not To Learn Scheme with Cityscapes colour training images use the following options whilst keeping all other at default:
+    - To train a baseline DeepLabV3 model without the Learning Not To Learn Scheme with Cityscapes colour training images use the following options whilst keeping all other at default:
         ```python
         exp_name = Exp1_Stage1 # <--- We MUST change this at each experiment to avoid saving over files
         train_baseline = True
@@ -195,7 +195,7 @@ user: $ /content/drive/MyDrive/BiasMitigation/LNTL/utils
         network_type = 'SegNet'
         dataset = 'SYNTHIA'
         ```
-    - To train a Deeplab network with the Learning Not To Learn scheme using the Cityscapes dataset using a pretrained model use:
+    - To train a DeepLabV3 network with the Learning Not To Learn scheme using the Cityscapes dataset using a pretrained model use:
         ```python
         exp_name = Exp3_Stage1
         train_baseline = False
@@ -206,11 +206,11 @@ user: $ /content/drive/MyDrive/BiasMitigation/LNTL/utils
 - Other functionality exists within the code, explore the options list to find out more. All code modifications only need to be made inside the *'main.ipynb'* script.
 
 - Model Timings with quoted environment:
-    - Each model takes approx. **12 hours** to train for 100 epochs on the Cityscapes datset. SegNet is slightly quicker as is the baseline model. 
-    - Each model takes approx. **16 hours** to train for 100 epochs on the SYNTHIA datset. Again SegNet is slightly quicker as is the baseline model. 
+    - Each model takes approx. **12 hours** to train for 100 epochs on the Cityscapes dataset. SegNet is slightly quicker - as is the baseline model. 
+    - Each model takes approx. **16 hours** to train for 100 epochs on the SYNTHIA dataset. Again, SegNet is slightly quicker - as is the baseline model. 
 
 
-- All model runs will create training_logs and diagnostic graphs in the correct locations,see the README in the *'training_logs'* directory for the file tree diagrams.  
+- All model runs will create training_logs and diagnostic graphs in the correct locations, see the README in the *'training_logs'* directory for the file tree diagrams.  
 
 - Test images are drawn from the train and validation dataloaders and saved to disk in the '~root/training_logs/{model selection options}/test_input_images' to ensure that the correct training data is being loaded into the model. 
 
@@ -219,7 +219,7 @@ user: $ /content/drive/MyDrive/BiasMitigation/LNTL/utils
 
 Loss curves can be inspected during model training. For a more granular analysis a few techniques used:
 
-1. **Via visualisation :** analysing the loss pickles
+1. **Via visualisation:** analysing the loss pickles
     - Step by step instructions:
         - Navigate to project evaluation scripts
         ``` console
@@ -229,7 +229,7 @@ Loss curves can be inspected during model training. For a more granular analysis
         - Run all cells and loss curves of all experiments are created
         - This is designed to be a self evaluation tool and best used editing the script yourself and analysing output. 
 
-2. **Qualitatively :** Preating overlaid images from the predictions and the raw images files.
+2. **Qualitatively:** Creating overlaid images from the predictions and the raw images files.
     - Step by Step instructions:
         - Navigate to project evaluation scripts
         ``` console
@@ -237,7 +237,7 @@ Loss curves can be inspected during model training. For a more granular analysis
         ```
         
         
-3. **Quantatively :** Passing the best model through the citycapesScripts evaluation server. 
+3. **Quantitatively:** Passing the best model through the citycapesScripts evaluation script. 
     - Step by step instructions:
         -  Navigate to the shell script for evaluation
         ``` console
@@ -266,13 +266,13 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 </br>
 
 ## 7. Summary 
 
-Our contribution empirically shows that semantic segmentation architectures do overfit to the colour within training data, and they struggle to generalise to unseen test data –even from a very similar input distribution, as seen in raw ! weather manipulation experiments. In the worst case; when validating on a set with a colour invert transformation, reductions of 85.50% were observed. We demonstrate that the unlearning technique itself is viable, showing a qualitative improvement to both stuff and things classes in pixel-wise semantic segmentation, from a benchmark seminal architecture - mIoU metrics confirmed this improvement. We observed a 62% increase in mIoU score for colour invert; when neglecting the result for colour invert, we still observe an average increase of 1.5% over all validation set manipulations tested. Furthermore, an average increase of 14.5% was observed for the “human” class, enhancing pragmatic performance in a safety-critical application such as autonomous driving. 
+Our contribution empirically shows that semantic segmentation architectures do overfit to the colour within training data, and they struggle to generalise to unseen test data –even from a very similar input distribution, as seen in raw --> weather manipulation experiments. In the worst case; when validating on a set with a colour invert transformation, reductions of 85.50% were observed. We demonstrate that the unlearning technique itself is viable, showing a qualitative improvement to both stuff and things classes in pixel-wise semantic segmentation, from a benchmark seminal architecture - mIoU metrics confirmed this improvement. We observed a 62% increase in mIoU score for colour invert; when neglecting the result for colour invert, we still observe an average increase of 1.5% over all validation set manipulations tested. Furthermore, an average increase of 14.5% was observed for the “human” class, enhancing pragmatic performance in a safety-critical application such as autonomous driving. 
 
 ### Contact Information
 
