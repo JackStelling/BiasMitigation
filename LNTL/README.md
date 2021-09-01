@@ -2,14 +2,14 @@
 
 ## *Contents:*
 1. Introduction
-2.  Requirements and environment
-3.  Datasets and downloads
+2.  Requirements and Environment
+3.  Datasets and Downloads
 4.  Cited Repositories
 5.  How to run this Repository
--- *Setting up the file structure*
--- *Preprocessing Data*
--- *Training*
--- *Evaluation*
+. . *Setting up the file structure*
+. . *Preprocessing Data*
+. . *Training*
+. . *Evaluation*
 6. Licensing
 7. Summary 
 
@@ -17,21 +17,21 @@
 
 ## 1. Introduction:
 
-Welcome to the repository on bias mitigation in the context of semantic segmentation. This repository is the pytorch implementation of the project found here:
+Hello and welcome to 'Just'Drive; a project pushing towards bias mitigation and fairness in AI. This repository is the PyTorch implementation of the project found here:
 
-'link to final pdf'
+[link to pdf]
 
-The project aim is to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wsie semantic segmentation task. Autonomous vechicles have been selected as a use case, as a safety critical AI technology - which is accountable for high stakes decisions constantly - meaning just and rigour is essential.
+In this project we attempt to remove colour bias from urban driving scenes used to train autonomous vehicle segmentation systems. Although this was the context the project focussed on the core principle should be applicable to any computer vision domain wishing to remove colour bias. 
 
-The project builds on top of other work in the field which have shown that biases exist within the CNNs slection of which cues to use. If colour information is available the model will surely use it as a cue for making decisions - even if it is not the correct cue to use. For example in the case of road driving scenes: Is a tree still classified as a tree even if it doesnt have its summer crown of leaves? Or is a road still classified as such even though a winter's snow has left a white blanket over the city? If we are to depend on AV technology as the transportation method of the future we must strive for a generalisable and equitable system. 
+![Network_Diagram]()
+
+
+The project attenps to push deep convolutional neural networks to 'unlearn' colour information whilst performing a pixel-wise semantic segmentation task. We use an auxiliary bias detection head slotted into a seminal semantic segmentation network to bin the colours into one of 8 classes. This colour information is then extracted out of the main semantic segmentation network via adversarial learning. So we let the networks play a minimax game until the bias head diverges – not due to poor performance but because the feature extraction network has unlearned the colour information making the bias detector struggle to perform its classification task. So we essentially penalise the feature extractor for encoding too much colour information. 
+
+The project builds on top of other work in the field which have shown that biases do exist within the CNNs; Often showing that models select the simplest cue for decision making. If colour information is available the model will surely use it as a cue for making decisions - even if it is not the correct cue to use. For example in the case of road driving scenes: Is a tree still classified as a tree even if it doesn't have its summer crown of leaves? Or is a road still classified as such even though a winter's snow has left a white blanket over the city? If we are to depend on AV technology as the transportation method of the future, we must strive for a generalisable and equitable system. 
 
 The aim of the project was to remove these biases which 
 
-
-
-Biases exist in all aspects of life, if the bias is known it can be accounted for - if the bias is unknown it acts as a much more insidious force. Further work which will be conducted after this project will focus on the removal of an unknown bias by use of latent representation using a VAE, more information regarding future work can be found in the appendix of the main report. 
-
-Altough this project focusses on bias removal in the context of semantc segmentation for autonomous vehicles the concept itself is ubiqutous and can be applied to any situation where colour bias is suspected to exist within the input data. 
 
 </br>
 
