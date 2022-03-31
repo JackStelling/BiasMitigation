@@ -19,7 +19,8 @@
 
 Hello and welcome to **'Just'Drive**; a project pushing towards bias mitigation and fairness in AI. This repository is the PyTorch implementation of the project found here:
 
-![Report PDF](Docs/JustDrive_Report.pdf)
+!['Just' Drive Report - PDF](Docs/JustDrive_Report.pdf)  or here,  !['Just' Drive IEEE Publication in ArXiV](https://arxiv.org/pdf/2112.01121.pdf)
+
 
 In this project we attempt to remove colour bias from urban driving scenes used to train autonomous vehicle segmentation systems. Although this was the context the project focussed on the core principle should be applicable to any computer vision domain wishing to remove colour bias. 
 
