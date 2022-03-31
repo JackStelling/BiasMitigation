@@ -156,7 +156,7 @@ user: $ git clone https://github.com/JackStelling/BiasMitigation
 
 
 
-- Navigate inside the *'BiasMitigation'* project repository and clone the official gcityscapesScripts GitHub repository: 
+- Navigate inside the *'BiasMitigation'* project repository and clone the official cityscapesScripts GitHub repository: 
 
 ```console
 user: $ cd /content/drive/MyDrive/BiasMitigation
@@ -279,6 +279,6 @@ Our contribution empirically shows that semantic segmentation architectures do o
 
 If you have any questions/concerns with the code provide or would like to collaborate on future work within the sphere of bias mitigation in deep learning please get in touch:
 
-**j.stelling2@ncl.ac.uk** 
+**jackstelling2@g*m*a*i*l.c*o*m 
 
 </br>
