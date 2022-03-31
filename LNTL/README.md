@@ -279,6 +279,6 @@ Our contribution empirically shows that semantic segmentation architectures do o
 
 If you have any questions/concerns with the code provide or would like to collaborate on future work within the sphere of bias mitigation in deep learning please get in touch:
 
-**jackstelling2@g_m_a_i_l.c_o_m 
+**jackstelling2@g_m_a_i_l.c_o_m**
 
 </br>
