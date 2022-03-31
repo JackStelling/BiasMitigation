@@ -4,4 +4,4 @@ For size reasons the datsets have not been tracked. The two datsets used with th
 - *Cityscapes* https://www.cityscapes-dataset.com/login/  , and 
 - *SYNTHIA* http://synthia-dataset.net/downloads/ . 
 
-For extra download information please visitsection 4 of the main README within the LNTL directory.
+For extra download information please visit section 4 of the main README within the LNTL directory.
